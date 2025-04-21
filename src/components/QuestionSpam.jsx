@@ -64,7 +64,7 @@ function QuestionSpam() {
         // if not, continue loading new questions 
         <div className={"flex"}>
 
-                <h1 className={"text-3xl border-red-400"}>{questionLabel}</h1>
+                <h1 className={"text-xl md:text-3xl border-red-400"}>{questionLabel}</h1>
 
                 <textarea autoFocus={true} className='border-b w-[90px] h-[50px] resize-none ml-8 bottom-5 text-center text-3xl' 
 

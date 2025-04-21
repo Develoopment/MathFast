@@ -39,18 +39,18 @@ function Leaderboard() {
   return (
     <div className='font-player text-white h-full flex justify-center py-30'>
       
-      <div className='w-[80%] space-y-15 flex flex-col items-center'>
+      <div className='md:w-[80%] space-y-8 md:space-y-15 flex flex-col items-center'>
 
-        <div className='space-x-5'>
+        <div className='md:space-x-5 text-center'>
           <Link to="/" className='border p-3 hover:text-black hover:bg-white'>Play Again!</Link>
           <button className='bg-white text-black p-2 border hover:text-white hover:bg-black cursor-pointer' onClick={scrollToTarget}>See Your Score</button>
         </div>
 
 
-        <h1 className='text-4xl text-center'>LEADERBOARD</h1>
+        <h1 className='text-xl md:text-4xl text-center'>LEADERBOARD</h1>
         
         {/* holds all the scores read from the database */}
-        <div className='space-y-8 w-[75%]'>
+        <div className='space-y-4 md:space-y-8 md:w-[75%]'>
 
         {scoresRankings.map((score, index) => {
 
@@ -67,9 +67,9 @@ function Leaderboard() {
             <div 
             key={index} 
             ref={score.score === recentPlayerInfo.score && score.name === recentPlayerInfo.name ? targetRef : null} 
-            className={`${colorClass} flex justify-between`}>
-              <h1 className='text-3xl'>{score.name}</h1>
-              <h1 className='text-3xl'>{score.score} secs</h1>
+            className={`${colorClass} md:flex justify-between text-md md:text-3xl`}>
+              <h1>{score.name}</h1>
+              <h1>{score.score} secs</h1>
             </div>
           )
 
