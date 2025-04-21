@@ -32,7 +32,7 @@ function Leaderboard() {
     }
 
     setFetchedData();
-    console.log(recentPlayerInfo);
+    // console.log(recentPlayerInfo);
 
   }, [])
 
