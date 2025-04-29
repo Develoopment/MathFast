@@ -18,7 +18,10 @@ function QuestionSpam() {
         inputField, 
         handleNumberButtonClicked, 
         yourSpeed,
-        isCorrect} = useGetRandQuestions();
+        isCorrect,
+        setIsCorrect} = useGetRandQuestions();
+
+    const {setQuestionsAnswered} = useAccuracyContext();
 
     //the useAccuracySpeedTracker is a custom hook that gets the speed and accuracy of the user (will need to modify this later)
     const {calculateSpeedTakenToAnswer} = useAccuracySpeedTracker();
@@ -53,6 +56,11 @@ function QuestionSpam() {
                             writeScores(value, yourSpeed);
                             // set the local player name and score to the recentPlayer context so we can locally higlight it in the leaderboard page
                             setRecentPlayerInfo({"name":value, "score":yourSpeed});
+                            
+                            // resetting isCorrect state so that the user can play again
+                            setIsCorrect("");
+                            //resetting questionsAnsweres (from accureacyContext) so that the user can play again
+                            setQuestionsAnswered(0);
                         }}> 
                         See Leaderboard
                     </Link>

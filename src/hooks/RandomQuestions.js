@@ -95,7 +95,7 @@ const useGetRandQuestions = () => {
         
     }
 
-    return {questionLabel, handleChange, userAnswer, inputField, handleNumberButtonClicked, isCorrect, yourSpeed};
+    return {questionLabel, handleChange, userAnswer, inputField, handleNumberButtonClicked, isCorrect, setIsCorrect, yourSpeed};
 }
 
 export default useGetRandQuestions;
